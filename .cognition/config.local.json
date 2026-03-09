@@ -12,7 +12,9 @@
       "Exec(npm audit)",
       "Exec(npx ng)",
       "Exec(npm show)",
-      "Exec(npm uninstall)"
+      "Exec(npm uninstall)",
+      "Exec(npm install)",
+      "Exec(git diff)"
     ]
   }
 }
