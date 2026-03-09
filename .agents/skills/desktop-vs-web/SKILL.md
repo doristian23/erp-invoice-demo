@@ -53,13 +53,13 @@ This is a training skill for UX designers. The designer does not code. All outpu
    - **Ask Devin**: "What validation rules exist in [module]?" (quick cross-file lookup)
    - **Full Session**: "Compare [desktop] vs [web] and produce a gap analysis with edge cases" (multi-step structured output)
 
-8. **Wrap up.** Tell the designer to start a new session and invoke: `@skills:research-benchmarking`
+8. **Wrap up.** Tell the designer to continue to the next phase. If running standalone, invoke `@skills:figma-verification` (or optionally `@skills:research-benchmarking` for competitive research). If running as part of the consolidated curriculum, invoke `@skills:training-phase-2`.
 
 ---
 
 ## Training Progress
 
-**Estimated total training time: ~55 minutes**
+**Recommended:** Use the consolidated `@skills:training-phase-1` instead, which runs all three Phase 1 lessons in a single session.
 
 **Phase 1 — Foundations:**
 1. ~~designer-intro~~ (~5 min)
@@ -67,9 +67,9 @@ This is a training skill for UX designers. The designer does not code. All outpu
 3. **desktop-vs-web** (~4 min) — You are here
 
 **Phase 2 — Design Workflows:**
-4. research-benchmarking (~7 min)
-5. figma-verification (~7 min)
-6. ux-writing-review (~6 min)
+4. figma-verification (~7 min)
+5. ux-writing-review (~6 min)
+6. research-benchmarking (~7 min, optional)
 
 **Phase 3 — Building Reusable Automation:**
 7. learn-knowledge (~5 min)

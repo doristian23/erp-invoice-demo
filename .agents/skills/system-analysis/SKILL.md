@@ -51,7 +51,7 @@ This is a training skill for UX designers. The designer does not code. All outpu
    - "What error does the user see when [action] fails?"
    - "What's missing compared to [reference]?"
 
-5. **Estimation exercise.** Ask the designer: "If you had to manually document every validation rule, error state, and edge case in an invoicing module by reading code or clicking through the desktop app, how long do you think it would take?" Let them answer. (Typical answer: hours to days.)
+5. **Time context.** Manually documenting every validation rule, error state, and edge case in an invoicing module by reading code or clicking through the desktop app would typically take a designer 2-4 hours. Watch Devin do it in under 2 minutes.
 
 6. **Show the time comparison.** You just produced a comprehensive analysis in under 2 minutes that would take hours manually. This is the core value of Devin for design research.
 
@@ -59,13 +59,13 @@ This is a training skill for UX designers. The designer does not code. All outpu
    - **Ask Devin**: "What validation rules exist?" (quick factual lookup)
    - **Full Session**: "What validation rules are *missing*? What edge cases aren't handled?" (requires deeper reasoning across multiple files)
 
-8. **Wrap up.** Tell the designer to start a new session and invoke: `@skills:desktop-vs-web`
+8. **Wrap up.** Tell the designer to continue to the next lesson. If running standalone, invoke `@skills:desktop-vs-web`. If running as part of the consolidated curriculum, invoke `@skills:training-phase-1` which includes this lesson.
 
 ---
 
 ## Training Progress
 
-**Estimated total training time: ~55 minutes**
+**Recommended:** Use the consolidated `@skills:training-phase-1` instead, which runs designer-intro, this lesson, and desktop-vs-web in a single session.
 
 **Phase 1 — Foundations:**
 1. ~~designer-intro~~ (~5 min)
@@ -73,9 +73,9 @@ This is a training skill for UX designers. The designer does not code. All outpu
 3. desktop-vs-web (~4 min)
 
 **Phase 2 — Design Workflows:**
-4. research-benchmarking (~7 min)
-5. figma-verification (~7 min)
-6. ux-writing-review (~6 min)
+4. figma-verification (~7 min)
+5. ux-writing-review (~6 min)
+6. research-benchmarking (~7 min, optional)
 
 **Phase 3 — Building Reusable Automation:**
 7. learn-knowledge (~5 min)
