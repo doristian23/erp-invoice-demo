@@ -14,7 +14,12 @@
       "Exec(npm show)",
       "Exec(npm uninstall)",
       "Exec(npm install)",
-      "Exec(git diff)"
+      "Exec(git diff)",
+      "Exec(cat)",
+      "Exec(git log)",
+      "Exec(xxd)",
+      "Exec(git rebase)",
+      "Exec(git filter-branch)"
     ]
   }
 }
