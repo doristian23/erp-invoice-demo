@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Desktop ERP — Invoice Module (Stub)</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #f0f0f0; }
+    .window { max-width: 900px; margin: 20px auto; background: #fff; border: 2px solid #999; box-shadow: 4px 4px 0 #ccc; }
+    .titlebar { background: linear-gradient(180deg, #0054e3 0%, #0040b0 100%); color: #fff; padding: 4px 8px; font-size: 12px; font-weight: bold; }
+    .toolbar { background: #ece9d8; border-bottom: 1px solid #999; padding: 4px; display: flex; gap: 4px; }
+    .toolbar button { font-size: 11px; padding: 2px 8px; cursor: pointer; }
+    .content { padding: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th { background: #ece9d8; border: 1px solid #999; padding: 4px 8px; text-align: left; }
+    td { border: 1px solid #ccc; padding: 4px 8px; }
+    .status-bar { background: #ece9d8; border-top: 1px solid #999; padding: 4px 8px; font-size: 11px; color: #333; }
+  </style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">Desktop ERP - Invoices</div>
+    <div class="toolbar">
+      <button>New</button>
+      <button>Edit</button>
+      <button>Delete</button>
+      <button>Print</button>
+      <button>Export</button>
+    </div>
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>Invoice #</th>
+            <th>Customer</th>
+            <th>Issue Date</th>
+            <th>Due Date</th>
+            <th>Net Amount</th>
+            <th>Tax</th>
+            <th>Gross Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>FV/2024/00001</td>
+            <td>Acme Sp. z o.o.</td>
+            <td>2024-01-15</td>
+            <td>2024-02-14</td>
+            <td>10,000.00 PLN</td>
+            <td>2,300.00 PLN</td>
+            <td>12,300.00 PLN</td>
+            <td>Paid</td>
+          </tr>
+          <tr>
+            <td>FV/2024/00002</td>
+            <td>Globex Corporation</td>
+            <td>2024-01-20</td>
+            <td>2024-02-19</td>
+            <td>5,500.00 PLN</td>
+            <td>1,265.00 PLN</td>
+            <td>6,765.00 PLN</td>
+            <td>Sent</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="status-bar">Records: 2 | Filter: None</div>
+  </div>
+</body>
+</html>

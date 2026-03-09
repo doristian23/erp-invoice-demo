@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Exec(git remote)",
+      "Exec(git branch)",
+      "Exec(gh auth)",
+      "Exec(gh)",
+      "Exec(brew install)",
+      "Exec(find)"
+    ]
+  }
+}

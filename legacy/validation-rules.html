@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Desktop ERP — Invoice Validation Rules (Reference)</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 800px; margin: 40px auto; line-height: 1.6; }
+    h1 { font-size: 18px; border-bottom: 2px solid #0054e3; padding-bottom: 4px; }
+    h2 { font-size: 14px; margin-top: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+    th { background: #ece9d8; border: 1px solid #999; padding: 6px 10px; text-align: left; }
+    td { border: 1px solid #ccc; padding: 6px 10px; }
+    .rule-id { font-weight: bold; color: #0054e3; }
+    code { background: #f0f0f0; padding: 2px 4px; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Desktop ERP — Invoice Validation Rules</h1>
+  <p>These validation rules are enforced by the desktop application when creating or editing an invoice document.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Rule #</th>
+        <th>Field</th>
+        <th>Validation</th>
+        <th>Error Message (Desktop)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rule-id">V1</td>
+        <td>Customer Name</td>
+        <td>Must not be empty</td>
+        <td>Customer name is required. Please select a customer from the registry.</td>
+      </tr>
+      <tr>
+        <td class="rule-id">V2</td>
+        <td>Issue Date</td>
+        <td>Must not be empty</td>
+        <td>Issue date is required. Please select a valid date.</td>
+      </tr>
+      <tr>
+        <td class="rule-id">V3</td>
+        <td>Due Date</td>
+        <td>Must be after Issue Date</td>
+        <td>Due date must be after the issue date. Please correct the payment terms.</td>
+      </tr>
+      <tr>
+        <td class="rule-id">V4</td>
+        <td>Amount</td>
+        <td>Must be greater than zero</td>
+        <td>Invoice amount must be greater than zero. Please check line items.</td>
+      </tr>
+      <tr>
+        <td class="rule-id">V5</td>
+        <td>Invoice Number</td>
+        <td>Must match pattern <code>XX/YYYY/NNNNN</code></td>
+        <td>Invoice number format is invalid. Expected format: XX/YYYY/NNNNN (e.g., FV/2024/00001).</td>
+      </tr>
+      <tr>
+        <td class="rule-id">V6</td>
+        <td>Line Items</td>
+        <td>At least one line item required</td>
+        <td>At least one line item is required. Please add items to the invoice.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Edge Cases (Desktop Behavior)</h2>
+  <ul>
+    <li>If a customer is deleted from the registry while an invoice references them, the invoice shows a warning icon and blocks editing until the customer is reassigned.</li>
+    <li>Invoices with status "Cancelled" cannot be edited or deleted — only viewed and exported.</li>
+    <li>Duplicate invoice numbers within the same fiscal year are rejected at save time.</li>
+    <li>When the due date falls on a weekend or bank holiday, the system auto-adjusts to the next business day and shows an info message.</li>
+    <li>Zero-quantity line items are allowed (for credit notes) but the unit price must still be non-zero.</li>
+  </ul>
+</body>
+</html>
