@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ButtonComponent, FormFieldComponent } from '../../../components/ui';
@@ -7,15 +7,14 @@ import { InvoiceService } from '../services/invoice.service';
 import { InvoiceFormData } from '../models/invoice.model';
 
 @Component({
-  selector: 'app-invoice-create',
-  standalone: true,
-  imports: [CommonModule, FormsModule, ButtonComponent, FormFieldComponent],
-  template: `
+    selector: 'app-invoice-create',
+    imports: [FormsModule, ButtonComponent, FormFieldComponent],
+    template: `
     <div class="create-page">
       <div class="create-header">
         <h2 class="create-title">New Invoice</h2>
       </div>
-
+    
       <form class="create-form" (ngSubmit)="onSubmit()">
         <div class="form-grid">
           <ui-form-field
@@ -25,7 +24,7 @@ import { InvoiceFormData } from '../models/invoice.model';
             [error]="errors['number'] || ''"
             [(ngModel)]="form.number"
             name="number" />
-
+    
           <ui-form-field
             label="Customer Name"
             fieldId="customerName"
@@ -33,7 +32,7 @@ import { InvoiceFormData } from '../models/invoice.model';
             [error]="errors['customerName'] || ''"
             [(ngModel)]="form.customerName"
             name="customerName" />
-
+    
           <ui-form-field
             label="Issue Date"
             fieldId="issueDate"
@@ -41,7 +40,7 @@ import { InvoiceFormData } from '../models/invoice.model';
             [error]="errors['issueDate'] || ''"
             [(ngModel)]="form.issueDate"
             name="issueDate" />
-
+    
           <ui-form-field
             label="Due Date"
             fieldId="dueDate"
@@ -49,7 +48,7 @@ import { InvoiceFormData } from '../models/invoice.model';
             [error]="errors['dueDate'] || ''"
             [(ngModel)]="form.dueDate"
             name="dueDate" />
-
+    
           <ui-form-field
             label="Amount"
             fieldId="amount"
@@ -58,7 +57,7 @@ import { InvoiceFormData } from '../models/invoice.model';
             [error]="errors['amount'] || ''"
             [(ngModel)]="form.amount"
             name="amount" />
-
+    
           <ui-form-field
             label="Currency"
             fieldId="currency"
@@ -66,7 +65,7 @@ import { InvoiceFormData } from '../models/invoice.model';
             [(ngModel)]="form.currency"
             name="currency" />
         </div>
-
+    
         <div class="form-actions">
           <ui-button variant="secondary" type="button" (click)="onCancel()">Cancel</ui-button>
           <ui-button variant="primary" type="submit">
@@ -74,13 +73,15 @@ import { InvoiceFormData } from '../models/invoice.model';
           </ui-button>
         </div>
       </form>
-
-      <div class="error-banner" *ngIf="submitError">
-        {{ submitError }}
-      </div>
+    
+      @if (submitError) {
+        <div class="error-banner">
+          {{ submitError }}
+        </div>
+      }
     </div>
-  `,
-  styles: [`
+    `,
+    styles: [`
     .create-header { margin-bottom: var(--space-lg); }
     .create-title {
       font-size: var(--font-size-xl);

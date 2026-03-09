@@ -6,7 +6,13 @@
       "Exec(gh auth)",
       "Exec(gh)",
       "Exec(brew install)",
-      "Exec(find)"
+      "Exec(find)",
+      "Exec(git push)",
+      "Exec(cat package.json)",
+      "Exec(npm audit)",
+      "Exec(npx ng)",
+      "Exec(npm show)",
+      "Exec(npm uninstall)"
     ]
   }
 }
