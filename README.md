@@ -4,106 +4,7 @@ A training application for learning [Devin](https://app.devin.ai) and [Windsurf]
 
 The app is a simplified Angular recreation of an ERP invoicing system with intentional design debt and logic gaps for training purposes.
 
-## Getting Started (for Designers)
-
-You have **two options** to access the running app — choose whichever is easier for you:
-
-### Option A: Use the Live Demo (no install needed)
-
-A hosted version of the app is available at:
-
-> **https://doristian23.github.io/erp-invoice-demo/**
-
-Open the link in any browser. No downloads, no terminal, no setup required.
-
-### Option B: Run Locally on Your Machine
-
-If you prefer to run the app on your own computer, follow these steps. If you've never used a terminal before, don't worry — just follow each step exactly as written.
-
-#### Step 1: Install Node.js
-
-Node.js is the tool that runs the app. You only need to install it once.
-
-1. Go to [https://nodejs.org](https://nodejs.org)
-2. Click the **LTS** (Long Term Support) button — this downloads the installer
-3. Open the downloaded file and follow the installer prompts (click "Next" / "Continue" through each step, accepting defaults)
-4. **Verify it worked:** Open your terminal and type:
-   ```bash
-   node --version
-   ```
-   You should see a version number like `v18.x.x` or higher. If you see an error, restart your terminal and try again.
-
-**How to open a terminal:**
-- **Mac:** Press `Cmd + Space`, type "Terminal", press Enter
-- **Windows:** Press the Windows key, type "Command Prompt" or "PowerShell", press Enter
-
-#### Step 2: Install Git (if you don't have it)
-
-Git is used to download the project. Many computers already have it.
-
-1. **Check if you already have Git:** In your terminal, type:
-   ```bash
-   git --version
-   ```
-   If you see a version number, skip to Step 3. If you see an error, continue below.
-
-2. **Install Git:**
-   - **Mac:** When you ran `git --version`, macOS may have prompted you to install Command Line Tools. Click "Install" if prompted. Otherwise, download from [https://git-scm.com/downloads](https://git-scm.com/downloads).
-   - **Windows:** Download from [https://git-scm.com/downloads](https://git-scm.com/downloads). Run the installer with default settings.
-
-#### Step 3: Download the Project
-
-In your terminal, type these commands one at a time, pressing Enter after each:
-
-```bash
-git clone https://github.com/doristian23/erp-invoice-demo.git
-```
-
-```bash
-cd erp-invoice-demo
-```
-
-#### Step 4: Install Dependencies
-
-This downloads all the libraries the app needs. It may take a minute or two.
-
-```bash
-npm install
-```
-
-If you see warnings (yellow text), that's normal — you can ignore them. Only red "ERROR" text means something went wrong.
-
-#### Step 5: Install Angular CLI
-
-Angular CLI is the tool that starts the development server:
-
-```bash
-npm install -g @angular/cli
-```
-
-#### Step 6: Start the App
-
-```bash
-ng serve
-```
-
-Wait until you see a message like: `** Angular Live Development Server is listening on localhost:4200 **`
-
-Then open your browser and go to: **http://localhost:4200**
-
-You should see the ERP Invoice application!
-
-**To stop the app:** Go back to your terminal and press `Ctrl + C`.
-
-**To restart later:** Open your terminal, navigate to the project folder, and run `ng serve` again:
-```bash
-cd erp-invoice-demo
-ng serve
-```
-
----
-
-## Two Tracks, One Repo
+## Three Tracks, One Repo
 
 ### Track A: Designers (Devin webapp)
 
@@ -155,6 +56,52 @@ Trigger workflows in Windsurf with `/<workflow-name>`:
 8. `/api-endpoint-and-data`
 9. `/figma-to-code`
 10. `/testing-and-ci`
+
+### Track C: Designers (Devin CLI)
+
+4 skills for running design checks directly from the terminal using the [Devin CLI](https://cli.devin.ai/docs). No browser needed — just open a terminal in the repo and ask Devin to run a skill. New to the terminal? See the [Designer Terminal Setup](DESIGNER-TERMINAL-SETUP.md) guide.
+
+These checks compare the codebase against its design specs (Figma tokens, UX glossary, legacy desktop rules) and print structured reports with tables and severity ratings.
+
+| Skill | What it checks | Output |
+| --- | --- | --- |
+| `cli-token-audit` | `tokens.css` vs. `tokens.spec.json` (Figma source of truth) | Mismatch table with High/Medium/Low severity |
+| `cli-ux-review` | Button labels, error messages, and terminology vs. `docs/ux-glossary.md` | Violations table grouped by type |
+| `cli-desktop-parity` | Web validation rules vs. `legacy/validation-rules.html` (desktop) | Gap analysis table + unhandled edge cases |
+| `cli-check-all` | All three checks above in a single pass | Combined report + summary counts |
+
+**Running a skill:**
+
+```bash
+devin "run @skills:cli-check-all"
+devin "run @skills:cli-token-audit"
+devin "run @skills:cli-ux-review invoices"
+devin "run @skills:cli-desktop-parity"
+```
+
+There is also a standalone token check that runs without Devin:
+
+```bash
+npm run verify-tokens
+```
+
+---
+
+## Getting Started
+
+**Option A — Live demo (no install):** Open **https://doristian23.github.io/erp-invoice-demo/** in any browser.
+
+**Option B — Run locally:**
+
+```bash
+git clone https://github.com/doristian23/erp-invoice-demo.git
+cd erp-invoice-demo
+npm install
+npm install -g @angular/cli
+ng serve
+```
+
+Then open **http://localhost:4200**. Requires [Node.js](https://nodejs.org) (LTS) and [Git](https://git-scm.com/downloads).
 
 ## Project Structure
 
