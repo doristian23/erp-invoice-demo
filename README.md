@@ -1,6 +1,6 @@
 # ERP Invoice Demo
 
-A training application for learning [Devin](https://app.devin.ai) and [Windsurf](https://windsurf.com/) through hands-on exercises with a realistic ERP invoice module.
+A training application for learning [Devin](https://app.devin.ai), [Devin CLI](https://cli.devin.ai/docs), and [Windsurf](https://windsurf.com/) through hands-on exercises with a realistic ERP invoice module.
 
 The app is a simplified Angular recreation of an ERP invoicing system with intentional design debt and logic gaps for training purposes.
 
