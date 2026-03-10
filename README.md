@@ -12,7 +12,7 @@ You have **two options** to access the running app — choose whichever is easie
 
 A hosted version of the app is available at:
 
-> **https://cog-gtm.github.io/erp-invoice-demo/**
+> **https://doristian23.github.io/erp-invoice-demo/**
 
 Open the link in any browser. No downloads, no terminal, no setup required.
 
